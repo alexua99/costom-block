@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            cursor: pointer;
+            transition: all 0.5s;
+            margin-bottom: 40px;
+        }
+
+        .box--2 {
+            background-color: blue;
+            transform: translateX(-100%);
+        }
+
+        .animete {
+            background-color: green;
+            transform: translateX(0);
+            animation: anim 2s;
+        }
+
+
+
+        .box--animation {
+            border-radius: 100px;
+        }
+
+        @keyframes anim {
+            0% {
+                transform: scaleX(1);
+                background-color: red;
+            }
+
+            100% {
+                transform: scaleX(-1);
+                background-color: green;
+            }
+        }
+
+        @keyframes anim2 {
+            0% {
+                transform: scaleX(-1);
+                background-color: green;
+            }
+
+            100% {
+                transform: scaleX(1);
+                background-color: gred;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        let box = document.querySelectorAll('.box')
+        let box2 = document.querySelector('.box--2')
+
+        //console.log(box2.getBoundingClientRect());
+
+
+        for (let i = 0; i < box.length; i++) {
+            box[i].addEventListener('click', () => {
+                box[i].classList.add('animete')
+            })
+        }
+
+
+
+        // window.addEventListener('scroll', () => {
+
+        //     for (let i = 0; i < box.length; i++) {
+        //         if (box[i].getBoundingClientRect().top <= 0) {
+        //             box[i].classList.add('animete')
+        //         }
+        //     }
+
+        // })
+        // Element.getBoundingClientRect()
+    </script>
+</body>
+
+</html>
