@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .loader {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader__conatiner {
+            display: flex;
+            gap: 10px;
+        }
+
+        .loader__item {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: blue;
+        }
+
+        .loader__item:first-child {
+            background-color: brown;
+        }
+
+        .loader__item:last-child {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="loader">
+        <div class="loader__conatiner">
+            <div class="loader__item"></div>
+            <div class="loader__item"></div>
+            <div class="loader__item"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            margin: 0 auto 20px;
+            height: 200px;
+            display: block;
+        }
+
+        .box-animation {
+            position: relative;
+            transition: all 2s;
+        }
+
+        .box-play {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <img data="1" src="" alt="" class="box box-animation">
+    <img data="2" src="" alt="" class="box box-animation">
+    <img data="3" src="" alt="" class="box box-animation">
+    <img data="https://www.kraftwerk.at/app/uploads/fly-images/962/reference-img-worlds-of-adventure-park-4-1920x9999.jpg"
+        src="" alt="" class="box box-animation">
+    <img data="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0771CDvJxEpncmBM1Cls7Oq9Vwv2uEvDJ9SsXdV7QClDYtDlpgcdoByRDbjtx8goGurA&usqp=CAU"
+        src="" alt="" class="box box-animation">
+    <img data="https://www.visitdubai.com/-/media/gathercontent/article/t/top-rides-at-img-worlds-of-adventure/media/top-rides-at-img-worlds-of-adventure-predator-5.jpg"
+        src="" alt="" class="box box-animation">
+    <img data="https://www.kraftwerk.at/app/uploads/fly-images/962/reference-img-worlds-of-adventure-park-4-1920x9999.jpg"
+        src="" alt="" class="box box-animation">
+    <img data="https://www.kraftwerk.at/app/uploads/fly-images/962/reference-img-worlds-of-adventure-park-4-1920x9999.jpg"
+        src="" alt="" class="box box-animation">
+    <img data="https://www.kraftwerk.at/app/uploads/fly-images/962/reference-img-worlds-of-adventure-park-4-1920x9999.jpg"
+        src="" alt="" class="box box-animation">
+    <img data="https://www.kraftwerk.at/app/uploads/fly-images/962/reference-img-worlds-of-adventure-park-4-1920x9999.jpg"
+        src="" alt="" class="box box-animation">
+
+
+
+
+
+
+    <script>
+        let box = document.querySelectorAll('.box-animation')
+
+
+        function isInViewport(el) {
+            let top = el.offsetTop;
+            let left = el.offsetLeft;
+            let width = el.offsetWidth;
+            let height = el.offsetHeight;
+
+            while (el.offsetParent) {
+                el = el.offsetParent;
+                top += el.offsetTop;
+                left += el.offsetLeft;
+            }
+
+            return (
+                top < (window.pageYOffset + window.innerHeight) &&
+                left < (window.pageXOffset + window.innerWidth) &&
+                (top + height) > window.pageYOffset &&
+                (left + width) > window.pageXOffset
+            );
+        }
+
+
+        window.addEventListener('scroll', function (event) {
+            for (let i = 0; i < box.length; i++) {
+                if (isInViewport(box[i])) {
+                    let data = box[i].getAttribute('data');
+                    box[i].setAttribute('src', `${data}`)
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

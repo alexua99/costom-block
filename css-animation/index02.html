@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            margin: 0 auto 20px;
+            height: 200px;
+            background-color: blue;
+
+        }
+
+        .box-animation {
+            position: relative;
+            left: -450px;
+            opacity: 0;
+            transition: all 2s;
+            display: block;
+        }
+
+        .box-play {
+            left: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box">
+        <h1>test tes tres</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem dicta eos incidunt praesentium iure esse, rem
+            tempore cum hic dolorum?</p>
+        <button>start</button>
+    </div>
+    <div class="box ">
+        <h1 class="box-animation">test tes tres</h1>
+        <p class="box-animation">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem dicta eos incidunt
+            praesentium iure esse, rem
+            tempore cum hic dolorum?</p>
+        <button class="box-animation">start</button>
+    </div>
+    <div class="box ">
+        <h1 class="box-animation">test tes tres</h1>
+        <p class="box-animation">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem dicta eos incidunt
+            praesentium iure esse, rem
+            tempore cum hic dolorum?</p>
+        <button class="box-animation">start</button>
+    </div>
+    <div class="box "></div>
+    <div class="box "></div>
+    <div class="box "></div>
+    <div class="box "></div>
+    <div class="box box-animation"></div>
+    <div class="box box-animation"></div>
+    <div class="box box-animation"></div>
+    <div class="box box-animation"></div>
+
+
+
+
+    <script>
+        let box = document.querySelectorAll('.box-animation')
+
+
+        function isInViewport(el) {
+            let top = el.offsetTop;
+            let left = el.offsetLeft;
+            let width = el.offsetWidth;
+            let height = el.offsetHeight;
+
+            while (el.offsetParent) {
+                el = el.offsetParent;
+                top += el.offsetTop;
+                left += el.offsetLeft;
+            }
+
+            return (
+                top < (window.pageYOffset + window.innerHeight) &&
+                left < (window.pageXOffset + window.innerWidth) &&
+                (top + height) > window.pageYOffset &&
+                (left + width) > window.pageXOffset
+            );
+        }
+
+
+        window.addEventListener('scroll', function (event) {
+            for (let i = 0; i < box.length; i++) {
+                if (isInViewport(box[i])) {
+                    box[i].classList.add('box-play')
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
