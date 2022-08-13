@@ -8,104 +8,58 @@
     <title>Document</title>
 
     <style>
-        section {
-            height: 500px;
-            background-color: blue;
-            margin-bottom: 20px;
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
         }
 
-        .modal {
-            background-color: rgba(0, 0, 0, 0.9);
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .box {
+            display: grid;
+            /* grid-template-columns: minmax(100px, 300px) 300px 200px; */
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-columns: 100px repeat(2, minmax(100px, 1fr)) 100px;
+            /* grid-template-rows: 100px calc(100vh - 200px) 100px; */
+        }
+
+        /* .box {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .modal__container {
-            width: 400px;
-            background-color: blue;
-            padding: 20px 20px;
+        .box__item {
+            width: 25%;
+        } */
+
+        .box__item {
+            border: 1px dashed;
+            text-align: center;
+            padding: 10px;
         }
 
-        .clos {
-            background-color: aliceblue;
-            width: fit-content;
-        }
-
-        .logo-mob {
-            display: none;
-        }
-
-        .logo-desk {
-            display: block;
-        }
-
-        @media (max-width: 480px) {
-            .logo-mob {
-                display: block;
-            }
-
-            .logo-desk {
-                display: none;
-            }
-        }
+        /* .hero__container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        } */
     </style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <section>
 
-        </section>
-        <section>
-
-        </section>
-        <section>
-
-        </section>
-        <section>
-
-        </section>
-        <section>
-
-        </section>
+    <div class="box">
+        <div class="box__item">1</div>
+        <div class="box__item">2</div>
+        <div class="box__item">3</div>
+        <div class="box__item">4</div>
+        <div class="box__item">5</div>
+        <div class="box__item">6</div>
+        <div class="box__item">6</div>
+        <div class="box__item">6</div>
+        <div class="box__item">5</div>
+        <div class="box__item">6</div>
+        <div class="box__item">6</div>
+        <div class="box__item">6</div>
     </div>
-
-    <div class="modal">
-        <div class="modal__container">
-            <div class="clos">X</div>
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <button>star 312 312 12 t</button>
-        </div>
-
-    </div>
-
-    <picture>
-        <source srcset="mdn-logo-mob.png" media="(min-width: 600px)">
-        <img src="mdn-logo-desk.png" alt="MDN">
-    </picture>
-
-
-    <div class="img__container">
-        <img class="logo-mob" src="mdn-logo-mob.png" alt="">
-        <img class="logo-desk" src="mdn-logo-desk.png" alt="">
-    </div>
-
-
-    <script>
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * max);
-        }
-        console.log(getRandomInt(3));
-    </script>
 </body>
 
 </html>

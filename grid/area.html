@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+
+            text-align: center;
+        }
+
+        .page-wrapp {
+            border: none;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 100px 500px 200px;
+            grid-template-areas: "header header"
+                "article main"
+                "footer footer";
+
+        }
+
+        .header {
+            grid-area: header;
+            background-color: brown;
+        }
+
+        .article {
+            grid-area: article;
+            background-color: aquamarine;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: blue;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: green;
+        }
+
+        section {
+            background-color: blueviolet;
+            height: 100%;
+        }
+
+        @media(max-width: 700px) {
+            .page-wrapp {
+
+                grid-template-areas: "header header"
+                    "main article"
+                    "footer footer";
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapp">
+        <header class="header">Header</header>
+        <main class="main">Main
+            <section>section</section>
+            <section>section</section>
+            <section>section</section>
+            <section>section</section>
+            <section>section</section>
+        </main>
+        <article class="article">Article</article>
+        <footer class="footer">footer</footer>
+    </div>
+
+
+</body>
+
+</html>
