@@ -9,10 +9,7 @@
 
     <style>
         section {
-            height: 600px;
-
-
-
+            height: 500px;
             background-color: blue;
             margin-bottom: 20px;
         }
@@ -39,6 +36,24 @@
         .clos {
             background-color: aliceblue;
             width: fit-content;
+        }
+
+        .logo-mob {
+            display: none;
+        }
+
+        .logo-desk {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .logo-mob {
+                display: block;
+            }
+
+            .logo-desk {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -68,10 +83,29 @@
             <input type="text">
             <input type="text">
             <input type="text">
-            <button>start</button>
+            <button>star 312 312 12 t</button>
         </div>
 
     </div>
+
+    <picture>
+        <source srcset="mdn-logo-mob.png" media="(min-width: 600px)">
+        <img src="mdn-logo-desk.png" alt="MDN">
+    </picture>
+
+
+    <div class="img__container">
+        <img class="logo-mob" src="mdn-logo-mob.png" alt="">
+        <img class="logo-desk" src="mdn-logo-desk.png" alt="">
+    </div>
+
+
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+        console.log(getRandomInt(3));
+    </script>
 </body>
 
 </html>
