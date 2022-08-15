@@ -1,0 +1,20 @@
+$red: red;
+$green: green;
+@import './components/header.scss';
+
+h1 {
+    color: red;
+    text-align: center;
+
+}
+
+.hero {
+    &__title {
+        color: red;
+        padding: 50px;
+
+        &--active {
+            color: $green;
+        }
+    }
+}
